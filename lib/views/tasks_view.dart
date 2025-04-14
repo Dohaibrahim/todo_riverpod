@@ -35,7 +35,15 @@ class TasksView extends ConsumerWidget {
               child: ListView.builder(
                 itemCount: tasks.length,
                 itemBuilder: (context, index) {
-                  return TaskWidget(index: index, task: tasks[index]);
+                  final task = tasks[index];
+                  return TaskWidget(
+                    task: task,
+                    onToggle:
+                        () => ref
+                            .read(tasksProvider.notifier)
+                            .toggleTask(task.id),
+                  );
+                  //return TaskWidget(index: index, task: tasks[index]);
                 },
               ),
             ),

@@ -4,9 +4,10 @@ import 'package:to_do_riverpod/models/task_model.dart';
 import 'package:to_do_riverpod/providers/task_provider.dart';
 
 class TaskWidget extends ConsumerWidget {
-  const TaskWidget({super.key, required this.task, required this.index});
+  const TaskWidget({super.key, required this.onToggle, required this.task});
   final TaskModel task;
-  final int index;
+  //final int index;
+  final VoidCallback onToggle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -16,19 +17,25 @@ class TaskWidget extends ConsumerWidget {
         leading: Checkbox(
           value: task.isCompleted,
           activeColor: Colors.blue,
-          onChanged: (_) {
-            ref.read(tasksProvider.notifier).toggleTask(index);
-          },
+          onChanged: (_) => onToggle(),
+          //{
+
+          //ref.read(tasksProvider.notifier).toggleTask(index);
+          //isActive = value;
+          //setState(() {});
+          //},
         ),
         title: Text(task.taskDescription, style: const TextStyle(fontSize: 20)),
       ),
     );
   }
 }
+
+
 /*
 class TaskWidget extends ConsumerStatefulWidget {
   // StatefulWidget {
-  const TaskWidget({super.key, required this.taskDec, required int index});
+  const TaskWidget({super.key, required this.taskDescription, required int index});
   final String taskDec;
 
 
@@ -52,7 +59,7 @@ class _TaskWidgetConsumerState extends ConsumerState<ConsumerStatefulWidget>{
             setState(() {});
           },
         ),
-        title: Text(widget.taskDec, style: TextStyle(fontSize: 20)),
+        title: Text(widget.taskDescription, style: TextStyle(fontSize: 20)),
       ),
     );
   }
