@@ -4,8 +4,8 @@ import 'package:to_do_riverpod/providers/task_provider.dart';
 import 'package:to_do_riverpod/widgets/adding_note.dart';
 import 'package:to_do_riverpod/widgets/task_widget.dart';
 
-class TasksView extends ConsumerWidget {
-  const TasksView({super.key});
+class TasksScreen extends ConsumerWidget {
+  const TasksScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
