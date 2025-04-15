@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:to_do_riverpod/providers/task_provider.dart';
 
-class AddingNote extends ConsumerStatefulWidget {
+class AddNoteButton extends ConsumerStatefulWidget {
   // StatelessWidget {
-  const AddingNote({super.key});
+  const AddNoteButton({super.key});
 
   @override
-  ConsumerState<AddingNote> createState() => _AddingNoteState();
+  ConsumerState<AddNoteButton> createState() => _AddingNoteState();
 }
 
-class _AddingNoteState extends ConsumerState<AddingNote> {
+class _AddingNoteState extends ConsumerState<AddNoteButton> {
   final TextEditingController _controller = TextEditingController();
 
   @override

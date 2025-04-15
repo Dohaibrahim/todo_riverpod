@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:to_do_riverpod/providers/task_provider.dart';
 import 'package:to_do_riverpod/widgets/adding_note.dart';
-import 'package:to_do_riverpod/widgets/task_widget.dart';
+import 'package:to_do_riverpod/widgets/task_listile.dart';
 
 class TasksScreen extends ConsumerWidget {
   const TasksScreen({super.key});
@@ -55,7 +55,7 @@ class TasksScreen extends ConsumerWidget {
       ),
       floatingActionButton: Builder(
         builder: (context) {
-          return AddingNote();
+          return AddNoteButton();
         },
       ),
     );
