@@ -39,7 +39,7 @@ class TasksScreen extends ConsumerWidget {
                 itemCount: tasks.length,
                 itemBuilder: (context, index) {
                   final task = tasks[index];
-                  return TaskWidget(
+                  return TaskLisTile(
                     task: task,
                     onToggle:
                         () => ref

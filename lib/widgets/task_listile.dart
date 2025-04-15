@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:to_do_riverpod/models/task_model.dart';
 import 'package:to_do_riverpod/providers/task_provider.dart';
 
-class TaskWidget extends ConsumerWidget {
-  const TaskWidget({super.key, required this.onToggle, required this.task});
+class TaskLisTile extends ConsumerWidget {
+  const TaskLisTile({super.key, required this.onToggle, required this.task});
   final TaskModel task;
   //final int index;
   final VoidCallback onToggle;
