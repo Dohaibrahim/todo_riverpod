@@ -10,8 +10,11 @@ class TasksScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tasks = ref.watch(tasksProvider);
-    final completed = tasks.where((t) => t.isCompleted).length;
-    final incomplete = tasks.length - completed;
+    final completedTasksLength =
+        ref.read(tasksProvider.notifier).completedTasksLength;
+    final incompleteTasksLengith =
+        ref.read(tasksProvider.notifier).incompleteTasksLengith;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -27,7 +30,7 @@ class TasksScreen extends ConsumerWidget {
         child: Column(
           children: [
             Text(
-              '${incomplete} incomplete , ${completed} completed ',
+              '$incompleteTasksLengith incomplete , $completedTasksLength completed ',
               style: TextStyle(fontSize: 18),
             ),
 

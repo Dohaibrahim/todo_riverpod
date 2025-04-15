@@ -18,50 +18,9 @@ class TaskWidget extends ConsumerWidget {
           value: task.isCompleted,
           activeColor: Colors.blue,
           onChanged: (_) => onToggle(),
-          //{
-
-          //ref.read(tasksProvider.notifier).toggleTask(index);
-          //isActive = value;
-          //setState(() {});
-          //},
         ),
         title: Text(task.taskDescription, style: const TextStyle(fontSize: 20)),
       ),
     );
   }
 }
-
-
-/*
-class TaskWidget extends ConsumerStatefulWidget {
-  // StatefulWidget {
-  const TaskWidget({super.key, required this.taskDescription, required int index});
-  final String taskDec;
-
-
-  @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _TaskWidgetConsumerState();
-}
-
-class _TaskWidgetConsumerState extends ConsumerState<ConsumerStatefulWidget>{
-  bool? isActive = false;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.054,
-      child: ListTile(
-        leading: Checkbox(
-          value: isActive,
-          activeColor: Colors.blue,
-          onChanged: (value) {
-            ref.read(tasksProvider.notifier).toggleTask(.index);
-            //isActive = value;
-            setState(() {});
-          },
-        ),
-        title: Text(widget.taskDescription, style: TextStyle(fontSize: 20)),
-      ),
-    );
-  }
-}
-*/
